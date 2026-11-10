@@ -1,0 +1,62 @@
+EYE-TRACKING THESIS - SETUP (new computer)
+
+1. INSTALL GIT, PYTHON 3.11 AND VISUAL C++
+------------------------------------------
+winget install -e --id Git.Git -s winget
+winget install -e --id Python.Python.3.11 -s winget
+winget install -e --id Microsoft.VCRedist.2015+.x64 -s winget
+
+check:
+git --version
+py -3.11 --version
+
+Python must be 3.11
+Visual C++ is needed by PyTorch on a fresh Windows.
+
+3. CLONE BOTH REPOS SIDE BY SIDE (outside OneDrive)
+---------------------------------------------------
+mkdir C:\dev\thesis-project
+cd C:\dev\thesis-project
+git clone https://github.com/theodorepancini/eye-tracking-thesis.git
+git clone https://github.com/xuepx/cgf_pupil_detector.git
+cd cgf_pupil_detector
+git checkout 0010408
+cd ..\eye-tracking-thesis
+
+"detached HEAD" is expected
+
+
+4. PYTHON ENVIRONMENT (in eye-tracking-thesis)
+----------------------------------------------
+py -3.11 -m venv .venv
+.venv\Scripts\activate
+pip install --default-timeout=300 -r requirements.txt
+
+NVIDIA GPU:
+pip uninstall -y torch
+pip install torch==2.1.2+cu121 --index-url https://download.pytorch.org/whl/cu121 --no-deps
+python -c "import torch; print(torch.cuda.is_available())"     -> should print True
+
+5. DATA
+-------
+LPW: 
+download from https://perceptualui.org/research/datasets/LPW/ and unpack so
+folders 1-22 sit directly in data\LPW\ 
+
+6. CAMERAS
+----------
+- the cameras used need to be on SS (USB 3) ports, since other ports only get ~6.5 fps instead of 60.
+- Install VLC to watch lossless (FFV1) recordings (Linux may have better options):
+  winget install -e --id VideoLAN.VLC -s winget
+
+
+7. CHECK THAT EVERYTHING WORKS
+------------------------------
+cd ..\cgf_pupil_detector
+python demo.py --lpw-dir ..\eye-tracking-thesis\data\LPW --participant 1 --vid-id 1 --weights best_model_finetune_v2_ep122_miou9524.pkl --frames 150 --output ..\eye-tracking-thesis\data\demo_test.gif
+cd ..\eye-tracking-thesis
+
+A1 on LPW
+python experiments\a1_reproduce\evaluate_lpw.py --participants 1 --max-frames 200
+python experiments\a1_reproduce\evaluate_lpw.py
+
