@@ -1,0 +1,19 @@
+{
+  "frames_total": 130856,
+  "frames_found": 97843,
+  "frames_with_error": 97843,
+  "detection_rate": 0.7477150455462493,
+  "ritnet_rate": 0.4801384728250902,
+  "median_error_px": 1.3978267772614865,
+  "mean_error_px": 4.7723214443808395,
+  "within_5px": 0.8682481117708982,
+  "within_10px": 0.9536400151262737,
+  "threshold": 0.8,
+  "videos": 66,
+  "wall_time_s": 5205.5417058,
+  "note": "wall time includes video decoding; not comparable to paper FPS",
+  "reference_commit": "xuepx/cgf_pupil_detector@0010408",
+  "opencv": "4.8.1",
+  "warnings": [],
+  "torch": "2.1.2+cpu"
+}

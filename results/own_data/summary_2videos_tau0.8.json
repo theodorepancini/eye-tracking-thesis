@@ -1,0 +1,34 @@
+{
+  "frames_total": 3604,
+  "detection_rate": 0.8509988901220865,
+  "ritnet_rate": 0.7910654827968924,
+  "traditional_candidate_rate": 0.9997225305216426,
+  "mean_confidence": 0.7566841738464568,
+  "mean_factors": {
+    "circularity": 0.6798730220907032,
+    "aspect_ratio": 0.7223492098728257,
+    "area_score": 0.07858011735386852,
+    "convex_ratio": 0.9456786990646745
+  },
+  "median_diameter_px": 202.91236877441406,
+  "frames_with_error": 0,
+  "median_error_px": NaN,
+  "within_5px": NaN,
+  "videos": [
+    "data\\own\\20261106_modi_full_q\\cam0.avi",
+    "data\\own\\20261106_modi_full_q\\cam1.avi"
+  ],
+  "threshold": 0.8,
+  "parameters": {
+    "scale": 1.0,
+    "ADAPTIVE_BLOCK_SIZE": 51,
+    "MORPH_KERNEL_SIZE": 5,
+    "MIN_PUPIL_AREA": 100,
+    "MAX_PUPIL_AREA": 50000,
+    "EXPECTED_AREA": 2999.9999999999977,
+    "ADAPTIVE_C": 10
+  },
+  "wall_time_s": 272.9560710000005,
+  "reference_commit": "xuepx/cgf_pupil_detector@0010408",
+  "opencv": "4.8.1"
+}

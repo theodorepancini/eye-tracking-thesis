@@ -1,0 +1,35 @@
+{
+  "frames_total": 1803,
+  "detection_rate": 0.9872434830837493,
+  "ritnet_rate": 0.201885745978924,
+  "traditional_candidate_rate": 0.922906267332224,
+  "mean_confidence": 0.7632215074309414,
+  "mean_factors": {
+    "circularity": 0.7596458885536485,
+    "aspect_ratio": 0.9205618502202592,
+    "area_score": 0.25108543998835153,
+    "convex_ratio": 0.9638353861073236
+  },
+  "median_diameter_px": 281.0789260864258,
+  "frames_with_error": 0,
+  "median_error_px": NaN,
+  "within_5px": NaN,
+  "videos": [
+    "data\\own\\20261106_theo_fixed\\cam0.avi"
+  ],
+  "threshold": 0.8,
+  "parameters": {
+    "scale": 1.0,
+    "ADAPTIVE_BLOCK_SIZE": 51,
+    "MORPH_KERNEL_SIZE": 5,
+    "MIN_PUPIL_AREA": 100,
+    "MAX_PUPIL_AREA": 50000,
+    "EXPECTED_AREA": 2999.9999999999977,
+    "ADAPTIVE_C": 10
+  },
+  "downscale": 2,
+  "remove_glints": false,
+  "wall_time_s": 11.563022199999978,
+  "reference_commit": "xuepx/cgf_pupil_detector@0010408",
+  "opencv": "4.8.1"
+}
